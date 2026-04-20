@@ -1,5 +1,48 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useUser } from '@/composables/useUser'
+import { ArrowLeft } from 'lucide-vue-next'
+import { useRoute, useRouter } from 'vue-router'
+
+const route = useRoute()
+const userId = Number(route.params.id)
+const router = useRouter()
+
+const { user, isLoading, error } = useUser(userId)
+</script>
 
 <template>
-  <h1>User Detail</h1>
+  <div v-if="isLoading" class="text-muted-foreground text-sm py-6 text-center">Cargando...</div>
+  <div v-else-if="error" class="text-danger text-sm">{{ error }}</div>
+  <section v-else-if="user" class="flex flex-col gap-6">
+    <button
+      class="bg-brand-primary px-5 py-3 rounded-2xl text-center flex items-center gap-2 self-start"
+      @click="router.go(-1)"
+    >
+      <ArrowLeft class="size-5" />
+      Volver
+    </button>
+
+    <div class="rounded-2xl border bg-background/60 p-6 flex flex-col gap-4">
+      <h2 class="text-2xl font-medium">{{ user.name }}</h2>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+        <div class="flex flex-col gap-1">
+          <span class="text-muted-foreground">Identificador</span>
+          <span class="font-medium">#{{ user.id }}</span>
+        </div>
+        <div class="flex flex-col gap-1">
+          <span class="text-muted-foreground">Email</span>
+          <span class="font-medium">{{ user.email }}</span>
+        </div>
+        <div class="flex flex-col gap-1">
+          <span class="text-muted-foreground">Rol</span>
+          <span class="font-medium capitalize">{{ user.role }}</span>
+        </div>
+        <div class="flex flex-col gap-1">
+          <span class="text-muted-foreground">Fecha de nacimiento</span>
+          <span class="font-medium">{{ user.birthDate ?? '—' }}</span>
+        </div>
+      </div>
+    </div>
+  </section>
 </template>

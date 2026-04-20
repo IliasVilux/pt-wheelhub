@@ -19,8 +19,9 @@ export async function getUsers(params: UsersParams = {}): Promise<UsersPage> {
   const res = await fetch(`${BASE}/users?${query}`)
   if (!res.ok) throw new Error('Error al cargar usuarios')
 
-  const total = Number(res.headers.get('X-Total-Count') ?? 0)
   const data = await res.json()
+  const totalHeader = res.headers.get('X-Total-Count')
+  const total = totalHeader ? Number(totalHeader) : data.length
 
   return { users: data.map(stripPassword), total }
 }

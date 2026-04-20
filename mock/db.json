@@ -1,0 +1,404 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "name": "Juan Pérez",
+            "email": "juan.perez1@example.com",
+            "password": "pass1234",
+            "birthDate": "1990-01-15",
+            "role": "admin"
+        },
+        {
+            "id": 2,
+            "name": "María López",
+            "email": "maria.lopez2@example.com",
+            "password": "pass1234",
+            "birthDate": null,
+            "role": "user"
+        },
+        {
+            "id": 3,
+            "name": "Carlos García",
+            "email": "carlos.garcia3@example.com",
+            "password": "pass1234",
+            "birthDate": "1995-07-10",
+            "role": "user"
+        },
+        {
+            "id": 4,
+            "name": "Lucía Fernández",
+            "email": "lucia.fernandez4@example.com",
+            "password": "pass1234",
+            "birthDate": null,
+            "role": "manager"
+        },
+        {
+            "id": 5,
+            "name": "Pedro Sánchez",
+            "email": "pedro.sanchez5@example.com",
+            "password": "pass1234",
+            "birthDate": "1985-06-18",
+            "role": "admin"
+        },
+        {
+            "id": 6,
+            "name": "Ana Torres",
+            "email": "ana.torres6@example.com",
+            "password": "pass1234",
+            "birthDate": "1993-02-12",
+            "role": "user"
+        },
+        {
+            "id": 7,
+            "name": "David Ruiz",
+            "email": "david.ruiz7@example.com",
+            "password": "pass1234",
+            "birthDate": null,
+            "role": "manager"
+        },
+        {
+            "id": 8,
+            "name": "Laura Díaz",
+            "email": "laura.diaz8@example.com",
+            "password": "pass1234",
+            "birthDate": "1991-04-25",
+            "role": "user"
+        },
+        {
+            "id": 9,
+            "name": "Javier Moreno",
+            "email": "javier.moreno9@example.com",
+            "password": "pass1234",
+            "birthDate": "1989-08-14",
+            "role": "admin"
+        },
+        {
+            "id": 10,
+            "name": "Elena Navarro",
+            "email": "elena.navarro10@example.com",
+            "password": "pass1234",
+            "birthDate": null,
+            "role": "user"
+        },
+        {
+            "id": 11,
+            "name": "Sergio Castro",
+            "email": "sergio.castro11@example.com",
+            "password": "pass1234",
+            "birthDate": "1984-05-11",
+            "role": "manager"
+        },
+        {
+            "id": 12,
+            "name": "Paula Romero",
+            "email": "paula.romero12@example.com",
+            "password": "pass1234",
+            "birthDate": null,
+            "role": "user"
+        },
+        {
+            "id": 13,
+            "name": "Raúl Herrera",
+            "email": "raul.herrera13@example.com",
+            "password": "pass1234",
+            "birthDate": "1990-10-19",
+            "role": "admin"
+        },
+        {
+            "id": 14,
+            "name": "Marta Vega",
+            "email": "marta.vega14@example.com",
+            "password": "pass1234",
+            "birthDate": "1992-01-27",
+            "role": "user"
+        },
+        {
+            "id": 15,
+            "name": "Álvaro Molina",
+            "email": "alvaro.molina15@example.com",
+            "password": "pass1234",
+            "birthDate": null,
+            "role": "manager"
+        },
+        {
+            "id": 16,
+            "name": "Sara Ortiz",
+            "email": "sara.ortiz16@example.com",
+            "password": "pass1234",
+            "birthDate": "1994-11-11",
+            "role": "user"
+        },
+        {
+            "id": 17,
+            "name": "Iván Rubio",
+            "email": "ivan.rubio17@example.com",
+            "password": "pass1234",
+            "birthDate": null,
+            "role": "admin"
+        },
+        {
+            "id": 18,
+            "name": "Carmen León",
+            "email": "carmen.leon18@example.com",
+            "password": "pass1234",
+            "birthDate": "1991-06-29",
+            "role": "user"
+        },
+        {
+            "id": 19,
+            "name": "Hugo Delgado",
+            "email": "hugo.delgado19@example.com",
+            "password": "pass1234",
+            "birthDate": null,
+            "role": "manager"
+        },
+        {
+            "id": 20,
+            "name": "Natalia Cano",
+            "email": "natalia.cano20@example.com",
+            "password": "pass1234",
+            "birthDate": "1995-09-09",
+            "role": "user"
+        },
+        {
+            "id": 21,
+            "name": "Adrián Reyes",
+            "email": "adrian.reyes21@example.com",
+            "password": "pass1234",
+            "birthDate": null,
+            "role": "admin"
+        },
+        {
+            "id": 22,
+            "name": "Beatriz Gil",
+            "email": "beatriz.gil22@example.com",
+            "password": "pass1234",
+            "birthDate": "1989-08-08",
+            "role": "user"
+        },
+        {
+            "id": 23,
+            "name": "Óscar Núñez",
+            "email": "oscar.nunez23@example.com",
+            "password": "pass1234",
+            "birthDate": null,
+            "role": "manager"
+        },
+        {
+            "id": 24,
+            "name": "Patricia Ríos",
+            "email": "patricia.rios24@example.com",
+            "password": "pass1234",
+            "birthDate": "1992-05-21",
+            "role": "user"
+        },
+        {
+            "id": 25,
+            "name": "Daniel Soto",
+            "email": "daniel.soto25@example.com",
+            "password": "pass1234",
+            "birthDate": "1990-10-30",
+            "role": "admin"
+        },
+        {
+            "id": 26,
+            "name": "Claudia Ramos",
+            "email": "claudia.ramos26@example.com",
+            "password": "pass1234",
+            "birthDate": null,
+            "role": "user"
+        },
+        {
+            "id": 27,
+            "name": "Fernando Iglesias",
+            "email": "fernando.iglesias27@example.com",
+            "password": "pass1234",
+            "birthDate": "1985-07-14",
+            "role": "manager"
+        },
+        {
+            "id": 28,
+            "name": "Alicia Medina",
+            "email": "alicia.medina28@example.com",
+            "password": "pass1234",
+            "birthDate": null,
+            "role": "user"
+        },
+        {
+            "id": 29,
+            "name": "Rubén Serrano",
+            "email": "ruben.serrano29@example.com",
+            "password": "pass1234",
+            "birthDate": "1988-11-02",
+            "role": "admin"
+        },
+        {
+            "id": 30,
+            "name": "Verónica Campos",
+            "email": "veronica.campos30@example.com",
+            "password": "pass1234",
+            "birthDate": null,
+            "role": "user"
+        },
+        {
+            "id": 31,
+            "name": "Miguel Prieto",
+            "email": "miguel.prieto31@example.com",
+            "password": "pass1234",
+            "birthDate": "1987-09-01",
+            "role": "manager"
+        },
+        {
+            "id": 32,
+            "name": "Cristina Lozano",
+            "email": "cristina.lozano32@example.com",
+            "password": "pass1234",
+            "birthDate": null,
+            "role": "user"
+        },
+        {
+            "id": 33,
+            "name": "Pablo Guerrero",
+            "email": "pablo.guerrero33@example.com",
+            "password": "pass1234",
+            "birthDate": "1989-04-04",
+            "role": "admin"
+        },
+        {
+            "id": 34,
+            "name": "Silvia Márquez",
+            "email": "silvia.marquez34@example.com",
+            "password": "pass1234",
+            "birthDate": null,
+            "role": "user"
+        },
+        {
+            "id": 35,
+            "name": "Andrés Peña",
+            "email": "andres.pena35@example.com",
+            "password": "pass1234",
+            "birthDate": "1986-12-28",
+            "role": "manager"
+        },
+        {
+            "id": 36,
+            "name": "Teresa Fuentes",
+            "email": "teresa.fuentes36@example.com",
+            "password": "pass1234",
+            "birthDate": null,
+            "role": "user"
+        },
+        {
+            "id": 37,
+            "name": "Luis Hidalgo",
+            "email": "luis.hidalgo37@example.com",
+            "password": "pass1234",
+            "birthDate": "1984-06-15",
+            "role": "admin"
+        },
+        {
+            "id": 38,
+            "name": "Rocío Pastor",
+            "email": "rocio.pastor38@example.com",
+            "password": "pass1234",
+            "birthDate": null,
+            "role": "user"
+        },
+        {
+            "id": 39,
+            "name": "Guillermo Vidal",
+            "email": "guillermo.vidal39@example.com",
+            "password": "pass1234",
+            "birthDate": "1988-10-10",
+            "role": "manager"
+        },
+        {
+            "id": 40,
+            "name": "Eva Pardo",
+            "email": "eva.pardo40@example.com",
+            "password": "pass1234",
+            "birthDate": null,
+            "role": "user"
+        },
+        {
+            "id": 41,
+            "name": "Mario Blasco",
+            "email": "mario.blasco41@example.com",
+            "password": "pass1234",
+            "birthDate": "1990-05-05",
+            "role": "admin"
+        },
+        {
+            "id": 42,
+            "name": "Noelia Crespo",
+            "email": "noelia.crespo42@example.com",
+            "password": "pass1234",
+            "birthDate": null,
+            "role": "user"
+        },
+        {
+            "id": 43,
+            "name": "Alberto Luna",
+            "email": "alberto.luna43@example.com",
+            "password": "pass1234",
+            "birthDate": "1987-02-25",
+            "role": "manager"
+        },
+        {
+            "id": 44,
+            "name": "Nuria Calvo",
+            "email": "nuria.calvo44@example.com",
+            "password": "pass1234",
+            "birthDate": null,
+            "role": "user"
+        },
+        {
+            "id": 45,
+            "name": "Diego Esteban",
+            "email": "diego.esteban45@example.com",
+            "password": "pass1234",
+            "birthDate": "1985-08-08",
+            "role": "admin"
+        },
+        {
+            "id": 46,
+            "name": "Lorena Iglesias",
+            "email": "lorena.iglesias46@example.com",
+            "password": "pass1234",
+            "birthDate": null,
+            "role": "user"
+        },
+        {
+            "id": 47,
+            "name": "Jesús Peña",
+            "email": "jesus.pena47@example.com",
+            "password": "pass1234",
+            "birthDate": "1989-03-14",
+            "role": "manager"
+        },
+        {
+            "id": 48,
+            "name": "Mónica Roldán",
+            "email": "monica.roldan48@example.com",
+            "password": "pass1234",
+            "birthDate": null,
+            "role": "user"
+        },
+        {
+            "id": 49,
+            "name": "Tomás Gallardo",
+            "email": "tomas.gallardo49@example.com",
+            "password": "pass1234",
+            "birthDate": "1986-09-09",
+            "role": "admin"
+        },
+        {
+            "id": 50,
+            "name": "Irene Cabrera",
+            "email": "irene.cabrera50@example.com",
+            "password": "pass1234",
+            "birthDate": null,
+            "role": "user"
+        }
+    ]
+}

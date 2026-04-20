@@ -24,6 +24,7 @@ export interface UsersPage {
 export interface UsersParams {
   page?: number
   limit?: number
-  search?: string
+  name?: string
+  email?: string
   role?: UserRole | ''
 }

@@ -30,7 +30,7 @@
             "email": "lucia.fernandez4@example.com",
             "password": "pass1234",
             "birthDate": null,
-            "role": "manager"
+            "role": "admin"
         },
         {
             "id": 5,
@@ -54,7 +54,7 @@
             "email": "david.ruiz7@example.com",
             "password": "pass1234",
             "birthDate": null,
-            "role": "manager"
+            "role": "admin"
         },
         {
             "id": 8,
@@ -86,7 +86,7 @@
             "email": "sergio.castro11@example.com",
             "password": "pass1234",
             "birthDate": "1984-05-11",
-            "role": "manager"
+            "role": "admin"
         },
         {
             "id": 12,
@@ -118,7 +118,7 @@
             "email": "alvaro.molina15@example.com",
             "password": "pass1234",
             "birthDate": null,
-            "role": "manager"
+            "role": "admin"
         },
         {
             "id": 16,
@@ -150,7 +150,7 @@
             "email": "hugo.delgado19@example.com",
             "password": "pass1234",
             "birthDate": null,
-            "role": "manager"
+            "role": "admin"
         },
         {
             "id": 20,
@@ -182,7 +182,7 @@
             "email": "oscar.nunez23@example.com",
             "password": "pass1234",
             "birthDate": null,
-            "role": "manager"
+            "role": "admin"
         },
         {
             "id": 24,
@@ -214,7 +214,7 @@
             "email": "fernando.iglesias27@example.com",
             "password": "pass1234",
             "birthDate": "1985-07-14",
-            "role": "manager"
+            "role": "admin"
         },
         {
             "id": 28,
@@ -246,7 +246,7 @@
             "email": "miguel.prieto31@example.com",
             "password": "pass1234",
             "birthDate": "1987-09-01",
-            "role": "manager"
+            "role": "admin"
         },
         {
             "id": 32,
@@ -278,7 +278,7 @@
             "email": "andres.pena35@example.com",
             "password": "pass1234",
             "birthDate": "1986-12-28",
-            "role": "manager"
+            "role": "admin"
         },
         {
             "id": 36,
@@ -310,7 +310,7 @@
             "email": "guillermo.vidal39@example.com",
             "password": "pass1234",
             "birthDate": "1988-10-10",
-            "role": "manager"
+            "role": "admin"
         },
         {
             "id": 40,
@@ -342,7 +342,7 @@
             "email": "alberto.luna43@example.com",
             "password": "pass1234",
             "birthDate": "1987-02-25",
-            "role": "manager"
+            "role": "admin"
         },
         {
             "id": 44,
@@ -374,7 +374,7 @@
             "email": "jesus.pena47@example.com",
             "password": "pass1234",
             "birthDate": "1989-03-14",
-            "role": "manager"
+            "role": "admin"
         },
         {
             "id": 48,

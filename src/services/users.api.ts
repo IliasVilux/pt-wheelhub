@@ -13,7 +13,8 @@ export async function getUsers(params: UsersParams = {}): Promise<UsersPage> {
 
   if (params.page) query.set('_page', String(params.page))
   if (params.limit) query.set('_limit', String(params.limit))
-  if (params.search) query.set('q', params.search)
+  if (params.name) query.set('name_like', params.name)
+  if (params.email) query.set('email_like', params.email)
   if (params.role) query.set('role', params.role)
 
   const res = await fetch(`${BASE}/users?${query}`)

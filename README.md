@@ -1,48 +1,60 @@
-# pt-wheelhub
+# PT Wheel Hub
 
-This template should help get you started developing with Vue 3 in Vite.
+Prueba técnica frontend para Wheel Hub. SPA de gestión de usuarios con listado, filtros, paginación, detalle, creación y edición.
 
-## Recommended IDE Setup
+## Stack
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- **Vue 3** (`<script setup>` + Composition API) + **TypeScript**
+- **Vite** como bundler
+- **Tailwind CSS v4** + **shadcn-vue** para UI
+- **Vue Router** para navegación
+- **vee-validate** + **zod** para validación de formularios
+- **json-server** como mock API
+- **Docker** + **docker-compose** para ejecución
 
-## Recommended Browser Setup
+## Funcionalidades
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+- Listado de usuarios con tabla paginada
+- Filtros por nombre, email y rol (sincronizados con la URL → al volver del detalle se mantienen filtros y página)
+- Detalle de usuario con botón "Volver"
+- Creación y edición de usuarios con validación en la parte del cliente
+- Validación desde el servidor para emails duplicados (409 → error bajo el campo)
+- Layout con sidebar + header, responsive (sidebar colapsable en móvil)
 
-## Type Support for `.vue` Imports in TS
+## Cómo ejecutarlo
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+### Con Docker (recomendado)
 
-## Customize configuration
+```bash
+docker compose up --build
+```
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+- App: http://localhost:8080
+- API: http://localhost:3001
 
-## Project Setup
+### En local
 
-```sh
+Requiere Node 20+ y pnpm.
+
+```bash
 pnpm install
+pnpm api       # levanta el mock API en :3001
+pnpm dev       # levanta la app en :5173
 ```
 
-### Compile and Hot-Reload for Development
+## Estructura
 
-```sh
-pnpm dev
 ```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-pnpm build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-pnpm lint
+src/
+├── components/      # UI (Sidebar, Header, UserForm, UserTable, etc.)
+├── composables/     # useUsers, useUser, useQueryFilters, useDebounce
+├── layouts/         # AppLayout (sidebar + header + outlet)
+├── pages/           # UsersList, UserDetail, UserCreate, UserEdit
+├── router/          # definición de rutas
+├── schemas/         # esquemas zod de validación
+├── services/        # users.api.ts (fetch al mock)
+└── types/           # tipos TypeScript
+mock/
+├── db.json          # 50 usuarios seed
+└── server.cjs       # middleware para rechazar emails duplicados (409)
 ```

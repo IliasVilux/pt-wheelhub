@@ -16,6 +16,7 @@ Prueba técnica frontend para Wheel Hub. SPA de gestión de usuarios con listado
 
 - Listado de usuarios con tabla paginada
 - Filtros por nombre, email y rol (sincronizados con la URL → al volver del detalle se mantienen filtros y página)
+- Ordenación de la tabla por nombre, email o rol (click en la cabecera, toggle asc/desc)
 - Detalle de usuario con botón "Volver"
 - Creación y edición de usuarios con validación en la parte del cliente
 - Validación desde el servidor para emails duplicados (409 → error bajo el campo)

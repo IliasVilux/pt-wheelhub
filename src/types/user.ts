@@ -35,4 +35,6 @@ export interface UsersParams {
   name?: string
   email?: string
   role?: UserRole | ''
+  sortBy?: 'id' | 'name' | 'email' | 'role'
+  sortOrder?: 'asc' | 'desc'
 }

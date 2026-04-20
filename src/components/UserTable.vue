@@ -8,9 +8,30 @@ import {
   TableRow,
 } from '@/components/ui/table'
 import type { User } from '@/types/user'
-import { Eye, Pencil } from 'lucide-vue-next'
+import { Eye, Pencil, ChevronUp, ChevronDown, ChevronsUpDown } from 'lucide-vue-next'
 
-defineProps<{ users: User[] }>()
+type SortColumn = 'id' | 'name' | 'email' | 'role'
+type SortOrder = 'asc' | 'desc'
+
+const props = defineProps<{
+  users: User[]
+  sortBy: SortColumn
+  sortOrder: SortOrder
+}>()
+
+const emit = defineEmits<{
+  sort: [sortBy: SortColumn, sortOrder: SortOrder]
+}>()
+
+function toggleSort(column: SortColumn) {
+  if (props.sortBy !== column) {
+    emit('sort', column, 'asc')
+  } else if (props.sortOrder === 'asc') {
+    emit('sort', column, 'desc')
+  } else {
+    emit('sort', 'id', 'asc')
+  }
+}
 </script>
 
 <template>
@@ -19,9 +40,60 @@ defineProps<{ users: User[] }>()
       <TableHeader>
         <TableRow class="hover:bg-transparent">
           <TableHead class="w-20">ID</TableHead>
-          <TableHead>Nombre</TableHead>
-          <TableHead>Email</TableHead>
-          <TableHead>Rol</TableHead>
+          <TableHead
+            class="cursor-pointer select-none transition-colors hover:text-foreground"
+            :class="sortBy === 'name' ? 'text-foreground' : ''"
+            v-on:click="toggleSort('name')"
+          >
+            <span class="inline-flex items-center gap-1.5">
+              Nombre
+              <ChevronUp
+                v-if="sortBy === 'name' && sortOrder === 'asc'"
+                class="size-3.5 text-brand-secondary"
+              />
+              <ChevronDown
+                v-else-if="sortBy === 'name' && sortOrder === 'desc'"
+                class="size-3.5 text-brand-secondary"
+              />
+              <ChevronsUpDown v-else class="size-3.5 text-muted-foreground/40" />
+            </span>
+          </TableHead>
+          <TableHead
+            class="cursor-pointer select-none transition-colors hover:text-foreground"
+            :class="sortBy === 'email' ? 'text-foreground' : ''"
+            v-on:click="toggleSort('email')"
+          >
+            <span class="inline-flex items-center gap-1.5">
+              Email
+              <ChevronUp
+                v-if="sortBy === 'email' && sortOrder === 'asc'"
+                class="size-3.5 text-brand-secondary"
+              />
+              <ChevronDown
+                v-else-if="sortBy === 'email' && sortOrder === 'desc'"
+                class="size-3.5 text-brand-secondary"
+              />
+              <ChevronsUpDown v-else class="size-3.5 text-muted-foreground/40" />
+            </span>
+          </TableHead>
+          <TableHead
+            class="cursor-pointer select-none transition-colors hover:text-foreground"
+            :class="sortBy === 'role' ? 'text-foreground' : ''"
+            v-on:click="toggleSort('role')"
+          >
+            <span class="inline-flex items-center gap-1.5">
+              Rol
+              <ChevronUp
+                v-if="sortBy === 'role' && sortOrder === 'asc'"
+                class="size-3.5 text-brand-secondary"
+              />
+              <ChevronDown
+                v-else-if="sortBy === 'role' && sortOrder === 'desc'"
+                class="size-3.5 text-brand-secondary"
+              />
+              <ChevronsUpDown v-else class="size-3.5 text-muted-foreground/40" />
+            </span>
+          </TableHead>
           <TableHead class="text-right">Acciones</TableHead>
         </TableRow>
       </TableHeader>

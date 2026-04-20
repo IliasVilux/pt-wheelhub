@@ -7,7 +7,8 @@ import { useUsers } from '@/composables/useUsers'
 import { Plus } from 'lucide-vue-next'
 
 const PAGE_SIZE = 8
-const { name, email, role, page, setFilter, setPage } = useQueryFilters()
+const { name, email, role, page, sortBy, sortOrder, setFilter, setPage, setSort } =
+  useQueryFilters()
 
 const { users, total, isLoading, error } = useUsers(() => ({
   page: page.value,
@@ -15,6 +16,8 @@ const { users, total, isLoading, error } = useUsers(() => ({
   name: name.value,
   email: email.value,
   role: role.value,
+  sortBy: sortBy.value,
+  sortOrder: sortOrder.value,
 }))
 </script>
 
@@ -73,7 +76,7 @@ const { users, total, isLoading, error } = useUsers(() => ({
       {{ error }}
     </div>
     <template v-else>
-      <UserTable :users="users" />
+      <UserTable :users="users" :sort-by="sortBy" :sort-order="sortOrder" @sort="setSort" />
       <Pagination
         class="mt-6"
         :page="page"

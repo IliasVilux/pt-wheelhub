@@ -10,6 +10,8 @@ export function useQueryFilters() {
   const email = computed(() => (route.query.email as string) || '')
   const role = computed(() => (route.query.role as UserRole) || '')
   const page = computed(() => Number(route.query.page) || 1)
+  const sortBy = computed(() => (route.query._sort as 'id' | 'name' | 'email' | 'role') || 'id')
+  const sortOrder = computed(() => (route.query._order as 'asc' | 'desc') || 'asc')
 
   function setFilter(key: 'name' | 'email' | 'role', value: string) {
     router.push({ query: { ...route.query, [key]: value || undefined, page: undefined } })
@@ -19,5 +21,9 @@ export function useQueryFilters() {
     router.push({ query: { ...route.query, page: newPage } })
   }
 
-  return { name, email, role, page, setFilter, setPage }
+  function setSort(newSortBy: 'id' | 'name' | 'email' | 'role', newSortOrder: 'asc' | 'desc') {
+    router.push({ query: { ...route.query, _sort: newSortBy, _order: newSortOrder } })
+  }
+
+  return { name, email, role, page, sortBy, sortOrder, setFilter, setPage, setSort }
 }

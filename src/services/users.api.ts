@@ -22,6 +22,8 @@ export async function getUsers(params: UsersParams = {}): Promise<UsersPage> {
   if (params.name) query.set('name_like', params.name)
   if (params.email) query.set('email_like', params.email)
   if (params.role) query.set('role', params.role)
+  if (params.sortBy) query.set('_sort', params.sortBy)
+  if (params.sortOrder) query.set('_order', params.sortOrder)
 
   const res = await fetch(`${BASE}/users?${query}`)
   if (!res.ok) throw new Error('Error al cargar usuarios')

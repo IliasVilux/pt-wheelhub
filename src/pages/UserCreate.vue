@@ -2,6 +2,7 @@
 import UserForm from '@/components/UserForm.vue'
 import { createUser } from '@/services/users.api'
 import type { UpdateUserPayload } from '@/types/user'
+import { ArrowLeft } from 'lucide-vue-next'
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 
@@ -24,8 +25,16 @@ async function handleSubmit(values: UpdateUserPayload) {
 </script>
 
 <template>
-  <div class="max-w-lg flex flex-col gap-6">
-    <h1 class="text-2xl md:text-4xl font-medium">Nuevo usuario</h1>
-    <UserForm ref="formRef" @submit="handleSubmit" />
-  </div>
+  <section class="py-8">
+    <div class="mt-4 flex flex-col gap-1">
+      <h1 class="text-3xl font-semibold tracking-tight md:text-4xl">Crear usuario</h1>
+      <p class="mt-1 text-sm text-muted-foreground">
+        Rellena el formulario para dar de alta una nueva cuenta.
+      </p>
+    </div>
+
+    <div class="mt-8 max-w-3xl rounded-2xl border border-border/50 bg-background p-6 md:p-8">
+      <UserForm ref="formRef" @submit="handleSubmit" />
+    </div>
+  </section>
 </template>

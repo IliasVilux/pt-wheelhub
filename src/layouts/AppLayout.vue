@@ -8,22 +8,33 @@ const mobileOpen = ref(false)
 </script>
 
 <template>
-  <div class="flex h-screen overflow-hidden bg-radial-[at_top_left] from-brand-primary/25 to-transparent to-75%">
-    <div class="hidden md:flex w-64">
+  <div
+    class="relative flex h-screen overflow-hidden bg-radial-[at_top_left] from-brand-primary/20 via-background to-transparent to-70%"
+  >
+    <div
+      aria-hidden="true"
+      class="pointer-events-none absolute -top-40 -right-40 size-128 rounded-full bg-brand-secondary/10 blur-3xl"
+    />
+
+    <aside class="relative z-10 hidden md:flex w-64 shrink-0">
       <Sidebar />
-    </div>
+    </aside>
 
     <Sheet v-model:open="mobileOpen">
-      <SheetContent side="left" class="w-60">
+      <SheetContent side="left" class="w-64 p-0">
         <Sidebar :on-navigate="() => (mobileOpen = false)" />
       </SheetContent>
     </Sheet>
 
-    <div class="flex flex-1 flex-col overflow-hidden">
-      <Header @menu-click="mobileOpen = true" />
-      <main class="flex-1 overflow-y-auto p-9 bg-background rounded-tl-2xl">
-        <RouterView />
-      </main>
+    <div class="relative z-10 flex flex-1 flex-col overflow-hidden p-3 md:p-4 md:pl-0">
+      <div
+        class="flex flex-1 flex-col overflow-hidden rounded-3xl border border-border/50 bg-background/90 shadow-[0_1px_0_rgba(0,0,0,0.02),0_30px_60px_-30px_rgba(0,0,0,0.12)] backdrop-blur"
+      >
+        <Header @menu-click="mobileOpen = true" />
+        <main class="flex-1 overflow-y-auto px-6 pb-10 md:px-10">
+          <RouterView />
+        </main>
+      </div>
     </div>
   </div>
 </template>

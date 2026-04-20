@@ -1,4 +1,4 @@
-import type { CreateUserPayload, User, UsersPage, UsersParams } from '@/types/user'
+import type { CreateUserPayload, UpdateUserPayload, User, UsersPage, UsersParams } from '@/types/user'
 
 const BASE = 'http://localhost:3001'
 
@@ -47,6 +47,23 @@ export async function createUser(payload: CreateUserPayload): Promise<User> {
   }
 
   if (!res.ok) throw new Error('Error al crear el usuario')
+
+  return stripPassword(await res.json()) as User
+}
+
+export async function updateUser(id: number, payload: UpdateUserPayload): Promise<User> {
+  const res = await fetch(`${BASE}/users/${id}`, {
+    method: 'PATCH',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload),
+  })
+
+  if (res.status === 409) {
+    const err = await res.json()
+    throw Object.assign(new Error(err.message), { field: err.field })
+  }
+
+  if (!res.ok) throw new Error('Error al actualizar el usuario')
 
   return stripPassword(await res.json()) as User
 }

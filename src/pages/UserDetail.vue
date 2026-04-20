@@ -14,13 +14,21 @@ const { user, isLoading, error } = useUser(userId)
   <div v-if="isLoading" class="text-muted-foreground text-sm py-6 text-center">Cargando...</div>
   <div v-else-if="error" class="text-danger text-sm">{{ error }}</div>
   <section v-else-if="user" class="flex flex-col gap-6">
-    <button
-      class="bg-brand-primary px-5 py-3 rounded-2xl text-center flex items-center gap-2 self-start"
-      @click="router.go(-1)"
-    >
-      <ArrowLeft class="size-5" />
-      Volver
-    </button>
+    <div class="flex items-center gap-3">
+      <button
+        class="bg-brand-primary px-5 py-3 rounded-2xl flex items-center gap-2"
+        @click="router.go(-1)"
+      >
+        <ArrowLeft class="size-5" />
+        Volver
+      </button>
+      <RouterLink
+        :to="`/users/${userId}/edit`"
+        class="px-5 py-3 rounded-2xl border flex items-center gap-2 text-sm font-medium hover:bg-muted transition-colors"
+      >
+        Editar
+      </RouterLink>
+    </div>
 
     <div class="rounded-2xl border bg-background/60 p-6 flex flex-col gap-4">
       <h2 class="text-2xl font-medium">{{ user.name }}</h2>

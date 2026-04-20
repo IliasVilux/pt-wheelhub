@@ -16,6 +16,14 @@ export interface CreateUserPayload {
   role: UserRole
 }
 
+export interface UpdateUserPayload {
+  name?: string
+  email?: string
+  password?: string
+  birthDate?: string | null
+  role?: UserRole
+}
+
 export interface UsersPage {
   users: User[]
   total: number

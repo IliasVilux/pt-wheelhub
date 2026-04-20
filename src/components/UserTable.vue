@@ -8,7 +8,7 @@ import {
   TableRow,
 } from '@/components/ui/table'
 import type { User } from '@/types/user'
-import { Pencil } from 'lucide-vue-next'
+import { Eye, Pencil } from 'lucide-vue-next'
 
 defineProps<{ users: User[] }>()
 </script>
@@ -26,15 +26,29 @@ defineProps<{ users: User[] }>()
       </TableHeader>
       <TableBody>
         <TableRow v-for="user in users" :key="user.id">
-          <TableCell class="text-muted-foreground hover:text-brand-primary transition-colors">{{ user.id }}</TableCell>
-          <TableCell class="font-medium hover:text-brand-primary transition-colors">{{ user.name }}</TableCell>
-          <TableCell class="text-muted-foreground hover:text-brand-primary transition-colors">{{ user.email }}</TableCell>
-          <TableCell class="text-right">
+          <TableCell class="text-muted-foreground hover:text-brand-primary transition-colors">{{
+            user.id
+          }}</TableCell>
+          <TableCell class="font-medium hover:text-brand-primary transition-colors">{{
+            user.name
+          }}</TableCell>
+          <TableCell class="text-muted-foreground hover:text-brand-primary transition-colors">{{
+            user.email
+          }}</TableCell>
+          <TableCell class="text-right flex gap-4">
             <RouterLink
               :to="`/users/${user.id}`"
-              class="text-xs cursor-pointer hover:text-brand-primary transition-colors"
+              class="text-xs cursor-pointer hover:text-brand-primary transition-colors flex items-center gap-1"
+            >
+              <Eye class="size-5" />
+              Ver
+            </RouterLink>
+            <RouterLink
+              :to="`/users/${user.id}/edit`"
+              class="text-xs cursor-pointer hover:text-brand-primary transition-colors flex items-center gap-1"
             >
               <Pencil class="size-5" />
+              Editar
             </RouterLink>
           </TableCell>
         </TableRow>

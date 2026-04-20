@@ -1,6 +1,12 @@
-import type { CreateUserPayload, UpdateUserPayload, User, UsersPage, UsersParams } from '@/types/user'
+import type {
+  CreateUserPayload,
+  UpdateUserPayload,
+  User,
+  UsersPage,
+  UsersParams,
+} from '@/types/user'
 
-const BASE = 'http://localhost:3001'
+const BASE = import.meta.env.VITE_API_URL ?? 'http://localhost:3001'
 
 // Helper para eliminar el campo password de los objetos User
 function stripPassword<T extends { password?: unknown }>(user: T): Omit<T, 'password'> {

@@ -1,0 +1,19 @@
+services:
+  api:
+    image: node:20-alpine
+    working_dir: /app
+    command: sh -c "npm install -g json-server@0.17.4 && json-server db.json --middlewares server.cjs --port 3001 --host 0.0.0.0"
+    volumes:
+      - ./mock:/app
+    ports:
+      - '3001:3001'
+
+  web:
+    build:
+      context: .
+      args:
+        VITE_API_URL: http://localhost:3001
+    ports:
+      - '8080:80'
+    depends_on:
+      - api

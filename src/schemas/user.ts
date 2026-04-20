@@ -11,7 +11,6 @@ export const createUserSchema = z.object({
     .string()
     .refine((val) => !val || !isNaN(Date.parse(val)), 'Fecha no válida')
     .refine((val) => !val || new Date(val) <= new Date(), 'La fecha no puede ser futura')
-    .nullable()
     .optional(),
   role: z.enum(['admin', 'user'], { message: 'Selecciona un rol' }),
 })

@@ -42,7 +42,7 @@ const { users, total, isLoading, error } = useUsers(() => ({
       </div>
 
       <RouterLink
-        to="/users/create"
+        :to="{ name: 'user-create' }"
         class="inline-flex h-11 items-center justify-center gap-2 self-start rounded-full bg-brand-primary px-5 text-sm font-medium text-foreground shadow-[0_1px_0_rgba(0,0,0,0.04),0_10px_24px_-12px_rgba(84,180,30,0.6)] transition-[filter,transform] hover:brightness-[0.97] active:scale-[0.99] sm:self-end"
       >
         <Plus class="size-4" />

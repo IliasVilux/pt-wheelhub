@@ -125,14 +125,14 @@ function toggleSort(column: SortColumn) {
           <TableCell>
             <div class="flex items-center justify-end gap-1">
               <RouterLink
-                :to="`/users/${user.id}`"
+                :to="{ name: 'user-detail', params: { id: user.id } }"
                 aria-label="Ver detalle"
                 class="grid size-9 place-items-center rounded-full text-muted-foreground transition-colors hover:bg-muted/70 hover:text-foreground"
               >
                 <Eye class="size-4" />
               </RouterLink>
               <RouterLink
-                :to="`/users/${user.id}/edit`"
+                :to="{ name: 'user-edit', params: { id: user.id } }"
                 aria-label="Editar"
                 class="grid size-9 place-items-center rounded-full text-muted-foreground transition-colors hover:bg-muted/70 hover:text-foreground"
               >

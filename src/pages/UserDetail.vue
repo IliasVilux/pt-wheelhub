@@ -65,7 +65,7 @@ function initials(name: string) {
           </div>
 
           <RouterLink
-            :to="`/users/${userId}/edit`"
+            :to="{ name: 'user-edit', params: { id: userId } }"
             class="inline-flex h-11 items-center justify-center gap-2 self-start rounded-full border border-border/70 bg-background px-5 text-sm font-medium text-foreground transition-colors hover:bg-muted/60 sm:self-center"
           >
             <Pencil class="size-4" />
